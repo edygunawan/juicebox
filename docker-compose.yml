@@ -9,5 +9,6 @@ services:
       - '3001:3000'
     volumes:
       - ./src:/usr/app
-    stdin_open: true
-    tty: true
+    command: sh -c "npm install --legacy-peer-deps && npm run dev"
+    environment:
+      NODE_ENV: development
